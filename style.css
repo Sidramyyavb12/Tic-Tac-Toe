@@ -1,0 +1,124 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background-image: url(bl.jpg);
+	text-align: center;
+}
+.container{
+	height: 70vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+}
+.game{
+	height: 60vmin;
+	width: 60vmin;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	gap: 1.5vmin;
+}
+.box{
+	width: 115px;
+	height: 115px;
+	text-align: center;
+	vertical-align: middle;
+	position: relative;
+	font-size: 90px;
+	background: rgba(0,0,0,0,75);
+	border-radius:15px;
+	color: aliceblue;
+	
+}
+
+.box::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+  }
+  
+  .box::before {
+    content: "";
+    background: linear-gradient(
+      45deg,
+      #FF0000, #FF7300, #FFFB00, #48FF00,
+      #00FFD5, #002BFF, #FF00C8, #FF0000
+    );
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 600%;
+    z-index: -1;
+    width: calc(100% + 4px);
+    height:  calc(100% + 4px);
+    filter: blur(8px);
+    animation: glowing 20s linear infinite;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+    opacity: 0;
+  }
+  
+  @keyframes glowing {
+    0% {background-position: 0 0;}
+    50% {background-position: 400% 0;}
+    100% {background-position: 0 0;}
+  }
+  
+  .box:hover::before {
+    opacity: 1;
+  }
+  
+  .box:active:after {
+    background: transparent;
+  }
+  
+  .box:active {
+    color: #000;
+    font-weight: bold;
+  }
+#reset-btn{
+	padding: 1rem;
+	font-size: 1.25rem;
+	background-color: #161616;
+	border-radius: 1rem;
+	border: none;
+	font-family: papyrus,fantasy;
+	color: white;
+	border-color: #7178b6;
+	border-style: solid;
+
+
+}
+#new{
+	padding: 1rem;
+	font-size: 1.25rem;
+	background-color: transparent;
+	border-radius: 1rem;
+	border: none;
+	color: white;
+	background-color: #161616;
+	font-family: papyrus,fantasy;
+	border-color: #7178b6;
+	border-style: solid;
+}
+#msg{
+	color: white;
+	font-size: 8vmin;
+	font-family: papyrus,fantasy;
+}
+.msg-container{
+	height: 30vmin;
+}
+.hide{
+display: none;
+}
